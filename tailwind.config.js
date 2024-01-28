@@ -10,9 +10,6 @@ export default {
         'banner-home': "url('/src/assets/background/Home.jpg')",
         'linear-top-black-0.75': "linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.0))",
         'linear-top-black-1': "linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.0))",
-        'backdrop': "url('/src/assets/dummy/backdrop.jpg')",
-        'poster-1': "url('/src/assets/dummy/poster-1.jpg')",
-        'poster-2': "url('/src/assets/dummy/poster-2.jpg')",
       },
       width: {
         200: "200px",
@@ -68,6 +65,7 @@ export default {
         3: "3px",
       },
       boxShadow: {
+        'loading': '0px 0px 50px 2px #FE170F',
         'default': '0px 0px 5px 5px rgba(0, 0, 0, 0.25)',
         'y-axis': '0px 5px 5px 0px rgba(0, 0, 0, 0.5)',
         'spread': '-4px 4px 10px 5px rgba(0, 0, 0, 0.35)',
@@ -77,11 +75,18 @@ export default {
         '7/5': '140%',
       },
       animation: {
+        'grow': 'grow 1.75s ease-in-out infinite',
         'scale-110': 'scale-110 8s ease-in-out forwards',
         'slide-to-right': 'slide-to-right 0.3s ease-in-out forwards',
         'slide-to-left': 'slide-to-left 0.3s ease-in-out forwards',
       },
       keyframes: {
+        'grow': {
+          '0%': { transform: 'scale(0.3)' },
+          '20%': { transform: 'scale(1)' },
+          '40%': { transform: 'scale(0.3)' },
+          '100%': { transform: 'scale(0.3)' },
+        },
         'scale-110': {
           '0%': { backgroundSize: '100%' },
           '20%': { backgroundSize: '115%' },
