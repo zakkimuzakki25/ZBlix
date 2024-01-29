@@ -24,6 +24,7 @@ export default {
         450: "450px",
         520: "520px",
         1040: "1040px",
+        1100: "1100px",
       },
       height: {
         0.75: "3px",
@@ -35,6 +36,7 @@ export default {
         450: "450px",
         "banner-lg": "720px",
         520: "520px",
+        550: "550px",
         1040: "1040px",
       },
       padding: {
