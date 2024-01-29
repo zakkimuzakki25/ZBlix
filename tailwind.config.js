@@ -6,9 +6,13 @@ export default {
   ],
   theme: {
     extend: {
+      zIndex: {
+        '100': '100',
+      },
       backgroundImage: {
         'banner-home': "url('/src/assets/background/Home.jpg')",
         'linear-top-black-0.75': "linear-gradient(to top, rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.0))",
+        'linear-top-black-0.9': "linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.0))",
         'linear-top-black-1': "linear-gradient(to top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0.0))",
       },
       width: {
@@ -17,6 +21,7 @@ export default {
         300: "300px",
         350: "350px",
         400: "400px",
+        450: "450px",
         520: "520px",
         1040: "1040px",
       },
@@ -26,12 +31,15 @@ export default {
         250: "250px",
         300: "300px",
         350: "350px",
+        400: "400px",
+        450: "450px",
         "banner-lg": "720px",
         520: "520px",
         1040: "1040px",
       },
       padding: {
         '50': "50px",
+        '100': "100px",
         '120': "120px",
         '150': "150px",
       },

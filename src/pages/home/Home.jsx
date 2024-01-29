@@ -1,5 +1,5 @@
-import TrendingSlider from "../../components/list-movie/TrendingSlider";
-import Navbar from "../../layout/Navbar";
+import TrendingSlider from "../../components/list-movie/TrendingSlider"
+import Navbar from "../../layout/Navbar"
 
 const Home = () => {
   return (
@@ -12,12 +12,12 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="w-full lg:h-banner-lg bg-center bg-cover bg-black-1">
+      <div className="w-full lg:h-fit bg-center bg-cover bg-black-1">
 
       </div>
 
     </div>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

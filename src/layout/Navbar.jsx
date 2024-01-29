@@ -37,7 +37,7 @@ const Navbar = () => {
   }, []);
 
   return (
-    <div className="w-full flex justify-center items-center">
+    <navbar className="w-full flex justify-center items-center">
       <div className={`${isHidden ? `-translate-y-7/5` : ''} navbar z-50 flex flex-row lg:w-10/12 lg:h-fit lg:px-9 lg:py-5 bg-black-0.85 lg:top-5 fixed lg:rounded-15 border-b-3 border-red justify-between transition-all shadow-y-axis`}>
         <Link to={"/"} className='hover:scale-105 transition-transform duration-200'>
           <img src={logo} alt="home" className='lg:h-10'/>
@@ -53,7 +53,7 @@ const Navbar = () => {
           <Link to={'/masuk'} className='text-base text-soft-white font-medium hover:scale-105 hover:text-red transition-transform'>Log In</Link>
         </div>
       </div>
-    </div>
+    </navbar>
   )
 }
 
