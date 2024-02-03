@@ -1,3 +1,4 @@
+import ListMovie from "../../components/list-movie/ListMovie"
 import TrendingSlider from "../../components/list-movie/TrendingSlider"
 import Navbar from "../../layout/Navbar"
 
@@ -12,8 +13,11 @@ const Home = () => {
         </div>
       </div>
 
-      <div className="w-full lg:h-fit bg-center bg-cover bg-black-1">
-
+      <div className="flex flex-col w-full bg-center bg-cover bg-black-1 gap-8 lg:pt-20 lg:pb-24 lg:px-24">
+        <ListMovie title={"Now Playing"} urlMovies={'https://api.themoviedb.org/3/movie/now_playing?language=en-US&page=1'}/>
+        <ListMovie title={"Top Rated"} urlMovies={'https://api.themoviedb.org/3/movie/top_rated?language=en-US&page=1'}/>
+        <ListMovie title={"Popular"} urlMovies={'https://api.themoviedb.org/3/movie/popular?language=en-US&page=1'}/>
+        <ListMovie title={"Upcoming"} urlMovies={'https://api.themoviedb.org/3/movie/upcoming?language=en-US&page=1'}/>
       </div>
 
     </div>

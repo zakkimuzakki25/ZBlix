@@ -1,56 +1,72 @@
-import { useEffect, useState } from "react";
-import Navbar from "../../layout/Navbar";
-import { useParams } from "react-router-dom";
-import axios from "axios";
-import Loading from "../../components/feedback/Loading";
-import { formatDate } from "../../helper/Helper";
-import Trailer from "../../components/play/Trailer";
-import CircularWithValueLabel from "../../components/feedback/CircularPercentageWithLabel";
-import TransparentButton from "../../components/button/TransparentButton";
+import { useEffect, useState } from "react"
+import Navbar from "../../layout/Navbar"
+import { useParams } from "react-router-dom"
+import axios from "axios"
+import Loading from "../../components/feedback/Loading"
+import { formatDate } from "../../helper/Helper"
+import Trailer from "../../components/play/Trailer"
+import CircularWithValueLabel from "../../components/feedback/CircularPercentageWithLabel"
+import TransparentButton from "../../components/button/TransparentButton"
 import iconPlay from '../../assets/icon/Play.svg'
 
 const DetailMovie = () => {
-  const { id } = useParams();
+  const { id } = useParams()
 
-  const [data, setData] = useState({});
-  const [isLoading, setIsLoading] = useState(false);
-  const [isPlayTrailer, setIsPlayTrailer] = useState(false);
-  const token = import.meta.env.VITE_TMDB_API_RAT;
+  const [data, setData] = useState({})
+  const [isLoading, setIsLoading] = useState(false)
+  const [isPlayTrailer, setIsPlayTrailer] = useState(false)
+  const token = import.meta.env.VITE_TMDB_API_RAT
+  const api_key = import.meta.env.VITE_TMDB_APIKEY
 
   const getData = async () => {
-    setIsLoading(true);
+    setIsLoading(true)
     axios
       .get(`https://api.themoviedb.org/3/movie/${id}?language=en-US`, {
         headers: { Authorization: `Bearer ${token}` },
       })
       .then((res) => {
-        const data = res.data;
-        setData(data);
-        console.log(data);
+        const data = res.data
+        setData(data)
+        console.log(data)
       })
       .catch((err) => {
-        console.log(err);
+        console.log(err)
       })
       .finally(() => {
-        setIsLoading(false);
-      });
-  };
+        setIsLoading(false)
+      })
+        
+    axios
+      .get(`https://api.themoviedb.org/3/movie/${id}/watch/providers?api_key=${api_key}`, {
+        headers: { Authorization: `Bearer ${token}` },
+      })
+      .then((res) => {
+        const data = res.data
+        console.log("movie", data)
+      })
+      .catch((err) => {
+        console.log(err)
+      })
+      .finally(() => {
+        setIsLoading(false)
+      })
+  }
 
   const handleWatchNowClick = () => {
-    const targetElement = document.getElementById("movie-play");
+    const targetElement = document.getElementById("movie-play")
   
     if (targetElement) {
       window.scrollTo({
         top: targetElement.offsetTop,
         behavior: "smooth",
-      });
+      })
     }
-  };
+  }
 
   useEffect(() => {
-    getData();
+    getData()
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [id, token]);
+  }, [id, token])
 
   return (
     <div className="flex-col w-full bg-black-1">
@@ -121,7 +137,7 @@ const DetailMovie = () => {
           
       </div>
     </div>
-  );
-};
+  )
+}
 
-export default DetailMovie;
+export default DetailMovie

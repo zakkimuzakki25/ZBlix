@@ -1,15 +1,15 @@
-import { useState, useEffect } from "react";
-import axios from "axios";
-import Loading from "../feedback/Loading";
+import { useState, useEffect } from "react"
+import axios from "axios"
+import Loading from "../feedback/Loading"
 
 // eslint-disable-next-line react/prop-types
 const Trailer = ({ handleClose, id }) => {
-  const [videoKey, setVideoKey] = useState("");
-  const [loading, setLoading] = useState(true);
+  const [videoKey, setVideoKey] = useState("")
+  const [loading, setLoading] = useState(true)
 
   const clickOutsideHandle = () => {
-    handleClose(false);
-  };
+    handleClose(false)
+  }
 
   useEffect(() => {
     const fetchData = async () => {
@@ -18,20 +18,19 @@ const Trailer = ({ handleClose, id }) => {
           `https://api.themoviedb.org/3/movie/${id}/videos?api_key=${
             import.meta.env.VITE_TMDB_APIKEY
           }`
-        );
+        )
 
-        // Ambil kunci video pertama dari respons
-        const key = response.data.results[0]?.key;
-        setVideoKey(key);
-        setLoading(false); // Setelah mendapatkan kunci video, hentikan loading
+        const key = response.data.results[0]?.key
+        setVideoKey(key)
+        setLoading(false)
       } catch (error) {
-        console.error("Error fetching video data:", error);
-        setLoading(false); // Hentikan loading jika terjadi kesalahan
+        console.error("Error fetching video data:", error)
+        setLoading(false)
       }
-    };
+    }
 
-    fetchData();
-  }, [id]);
+    fetchData()
+  }, [id])
 
   return (
     <div
@@ -51,7 +50,7 @@ const Trailer = ({ handleClose, id }) => {
         />
       )}
     </div>
-  );
-};
+  )
+}
 
-export default Trailer;
+export default Trailer

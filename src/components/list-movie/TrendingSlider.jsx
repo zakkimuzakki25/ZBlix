@@ -62,7 +62,7 @@ const TrendingSlider = () => {
       className="flex flex-row w-full h-fit lg:gap-5 lg:py-2 justify-center"
     >
       {isPlayTrailer && <Trailer handleClose={setIsPlayTrailer} id={selectedID} />}
-      <div className="lg:w-1100 lg:h-550">
+      <div className="lg:w-1085 lg:h-550 shadow-spread">
         {isLoading ? (
           <Loading />
         ) : (
@@ -73,9 +73,9 @@ const TrendingSlider = () => {
                   style={{
                     backgroundImage: `url(https://image.tmdb.org/t/p/original${item.backdrop_path})`,
                   }}
-                  className="lg:w-1100 lg:h-550 bg-cover bg-center hover:animate-scale-110"
+                  className="lg:w-1085 lg:h-550 bg-cover bg-center hover:animate-scale-110"
                 >
-                  <div className="flex flex-row w-full h-full bg-linear-top-black-1 lg:gap-9 lg:px-12 lg:py-10 items-end shadow-spread">
+                  <div className="flex flex-row w-full h-full bg-linear-top-black-1 lg:gap-9 lg:px-12 lg:py-10 items-end">
                     <div
                       style={{
                         backgroundImage: `url(https://image.tmdb.org/t/p/w500${item.poster_path})`,

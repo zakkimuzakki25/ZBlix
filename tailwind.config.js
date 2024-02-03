@@ -24,7 +24,7 @@ export default {
         450: "450px",
         520: "520px",
         1040: "1040px",
-        1100: "1100px",
+        1085: "1085px",
       },
       height: {
         0.75: "3px",
@@ -47,7 +47,7 @@ export default {
       },
       colors: {
         red: "#FE170F",
-        grey: "#4E4E4E",
+        gray: "#4E4E4E",
         yellow: "#FCC21B",
         soft: {
           white: "#D9D9D9",
